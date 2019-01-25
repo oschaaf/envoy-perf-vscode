@@ -1,0 +1,4 @@
+[submodule "envoy-perf"]
+	path = envoy-perf
+	url = git@github.com:We-Amp/envoy-perf.git
+	branch = nighthawk

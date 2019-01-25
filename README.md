@@ -1,2 +1,2 @@
 # envoy-perf-vscode
-VSCode workspace for envoy-perf
+VSCode workspace setup for envoy-perf.

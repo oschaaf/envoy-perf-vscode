@@ -1,0 +1,68 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "debug-build",
+            "program": "${workspaceRoot}/envoy-perf/nighthawk/bazel-bin/nighthawk_client",
+            "args": [
+                "--rps",
+                "5",
+                "http://foo.we-amp.com/"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/envoy-perf/nighthawk/",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "sourceFileMap": {
+                "/proc/self/cwd/external": "${workspaceFolder}/envoy-perf/nighthawk/"
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Test",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "debug-build-test",
+            "program": "${workspaceRoot}/envoy-perf/nighthawk/bazel-bin/test/nighthawk_test",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/envoy-perf/nighthawk/",
+            "environment": [
+                {
+                    "name": "TEST_WORKSPACE",
+                    "value": "."
+                },
+                {
+                    "name": "TEST_SRCDIR",
+                    "value": "${workspaceRoot}/envoy-perf/nighthawk/"
+                },
+                {
+                    "name": "ENVOY_IP_TEST_VERSIONS",
+                    "value": "v4only"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "sourceFileMap": {
+                "/proc/self/cwd/external/envoy": "${workspaceFolder}/envoy-perf/nighthawk/envoy"
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+    ]
+}
