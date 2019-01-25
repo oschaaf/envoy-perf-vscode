@@ -196,9 +196,6 @@
             "label": "setup third party includes",
             "type": "shell",
             "command": "./symlink-ide-headers.sh",
-            "options": {
-                "cwd": "envoy-perf/nighthawk"
-            }
         }
     ]
 }
