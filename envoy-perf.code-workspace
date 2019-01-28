@@ -3,5 +3,11 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"git.fetchOnPull": true,
+		"git.autofetch": true,
+		"git.alwaysSignOff": true,
+		"git.enableCommitSigning": true
+	}
 }
