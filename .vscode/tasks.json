@@ -6,7 +6,7 @@
         {
             "label": "debug-build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build -c dbg //:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //:nighthawk_client",
             "options": {
                 "cwd": "envoy-perf/nighthawk"
             },
@@ -21,7 +21,7 @@
         {
             "label": "debug-build-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build -c dbg //test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //test:nighthawk_test",
             "options": {
                 "cwd": "envoy-perf/nighthawk"
             },
@@ -36,7 +36,7 @@
         {
             "label": "opt-build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build -c opt //:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //:nighthawk_client",
             "options": {
                 "cwd": "envoy-perf/nighthawk"
             },
@@ -51,7 +51,7 @@
         {
             "label": "opt-build-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build -c opt //test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //test:nighthawk_test",
             "options": {
                 "cwd": "envoy-perf/nighthawk"
             },
@@ -66,7 +66,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build -c fastbuild //:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //:nighthawk_client",
             "options": {
                 "cwd": "envoy-perf/nighthawk"
             },
@@ -81,7 +81,7 @@
         {
             "label": "build-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build -c fastbuild //test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //test:nighthawk_test",
             "options": {
                 "cwd": "envoy-perf/nighthawk"
             },
@@ -96,7 +96,7 @@
         {
             "label": "bazel-run-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test  --cache_test_results=no -c fastbuild //test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c fastbuild //test:nighthawk_test",
             "options": {
                 "cwd": "envoy-perf/nighthawk"
             },
