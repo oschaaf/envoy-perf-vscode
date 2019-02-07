@@ -81,7 +81,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //nighthawk:nighthawk_client",
             "options": {
                 "cwd": "envoy-perf/nighthawk"
             },
@@ -138,12 +138,12 @@
             "options": {
                 "env": {
                     "TEST_WORKSPACE": ".",
-                    "TEST_SRCDIR": "${workspaceRoot}/envoy-perf/nighthawk",
+                    "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
                     "ENVOY_IP_TEST_VERSIONS": "v4only"
                 },
-                "cwd": "envoy-perf/nighthawk"
+                "cwd": "envoy-perf"
             },
-            "command": "bazel-bin/test/nighthawk_test",
+            "command": "bazel-bin/nighthawk/test/nighthawk_test",
             "group": {
                 "kind": "test",
                 "isDefault": true
