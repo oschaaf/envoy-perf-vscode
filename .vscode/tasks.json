@@ -111,9 +111,9 @@
         {
             "label": "bazel-run-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c fastbuild //test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c fastbuild //nighthawk/test:nighthawk_test",
             "options": {
-                "cwd": "envoy-perf/nighthawk"
+                "cwd": "envoy-perf"
             },
             "problemMatcher": [
                 "$gcc"
@@ -179,9 +179,9 @@
             "label": "simple-valgrind-run-direct",
             "type": "shell",
             "dependsOn": "debug-build",
-            "command": "./tools/valgrind.sh",
+            "command": "nighthawk/tools/valgrind.sh",
             "options": {
-                "cwd": "envoy-perf/nighthawk"
+                "cwd": "envoy-perf"
             },
             "problemMatcher": [
                 "$gcc"
@@ -195,9 +195,9 @@
             "label": "valgrind-run-test-direct",
             "type": "shell",
             "dependsOn": "debug-build-test",
-            "command": "./tools/valgrind-tests.sh",
+            "command": "nighthawk/tools/valgrind-tests.sh",
             "options": {
-                "cwd": "envoy-perf/nighthawk"
+                "cwd": "envoy-perf"
             },
             "problemMatcher": [
                 "$gcc"
