@@ -33,10 +33,10 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "debug-build-test",
-            "program": "${workspaceRoot}/envoy-perf/nighthawk/bazel-bin/test/nighthawk_test",
+            "program": "${workspaceRoot}/envoy-perf/bazel-bin/nighthawk/test/nighthawk_test",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/envoy-perf/nighthawk/",
+            "cwd": "${workspaceFolder}/envoy-perf/",
             "environment": [
                 {
                     "name": "TEST_WORKSPACE",
@@ -44,7 +44,7 @@
                 },
                 {
                     "name": "TEST_SRCDIR",
-                    "value": "${workspaceRoot}/envoy-perf/nighthawk/"
+                    "value": "${workspaceRoot}/envoy-perf/"
                 },
                 {
                     "name": "ENVOY_IP_TEST_VERSIONS",
