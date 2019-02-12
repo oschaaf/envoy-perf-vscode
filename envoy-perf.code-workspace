@@ -64,7 +64,8 @@
 			"typeindex": "cpp",
 			"typeinfo": "cpp",
 			"utility": "cpp",
-			"variant": "cpp"
+			"variant": "cpp",
+			"complex": "cpp"
 		},
 		"editor.formatOnSave": true,
 		"doxdocgen.generic.authorEmail": "oschaaf@we-amp.com",
