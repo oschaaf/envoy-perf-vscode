@@ -24,7 +24,8 @@
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
-            }
+            },
+            "compileCommands": "${workspaceFolder}/envoy-perf/compile_commands.json"
         }
     ],
     "version": 4
