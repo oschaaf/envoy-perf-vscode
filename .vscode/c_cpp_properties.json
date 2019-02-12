@@ -5,12 +5,12 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
-                "${workspaceFolder}/envoy-perf/nighthawk/**",
+                "${workspaceFolder}/envoy-perf/**",
                 "${workspaceFolder}/envoy-perf/nighthawk/envoy/**",
                 "/tmp/nighthawk_bazel_output_base/external/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/usr/lib/llvm-7/bin/clang++",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64",
@@ -18,7 +18,7 @@
                 "path": [
                     "/usr/include",
                     "/usr/local/include",
-                    "${workspaceFolder}/envoy-perf/nighthawk/**",
+                    "${workspaceFolder}/envoy-perf/**",
                     "${workspaceFolder}/envoy-perf/nighthawk/envoy/**",
                     "/tmp/nighthawk_bazel_output_base/external/**"
                 ],
