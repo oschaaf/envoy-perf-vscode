@@ -66,7 +66,8 @@
 			"utility": "cpp",
 			"variant": "cpp",
 			"complex": "cpp",
-			"random": "cpp"
+			"random": "cpp",
+			"algorithm": "cpp"
 		},
 		"editor.formatOnSave": true,
 		"doxdocgen.generic.authorEmail": "oschaaf@we-amp.com",
