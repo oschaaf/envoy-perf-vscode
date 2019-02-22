@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "debug-build",
-            "program": "${workspaceRoot}/envoy-perf/nighthawk/bazel-bin/nighthawk_client",
+            "program": "${workspaceRoot}/envoy-perf/bazel-bin/nighthawk/nighthawk_client",
             "args": [
                 "--rps",
                 "5",
