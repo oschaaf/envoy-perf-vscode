@@ -192,6 +192,27 @@
             }
         },
         {
+            "label": "callgrind-test-coverage",
+            "type": "shell",
+            "dependsOn": "debug-build-test",
+            "command": "valgrind --tool=callgrind --collect-jumps=yes bazel-bin/nighthawk/test/nighthawk_test",
+            "options": {
+                "env": {
+                    "TEST_WORKSPACE": ".",
+                    "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
+                    "ENVOY_IP_TEST_VERSIONS": "v4only"
+                },
+                "cwd": "envoy-perf"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
             "label": "valgrind-run-test-direct",
             "type": "shell",
             "dependsOn": "debug-build-test",
