@@ -6,6 +6,7 @@
                 "/usr/include",
                 "/usr/local/include",
                 "${workspaceFolder}/envoy-perf/**",
+                "${workspaceFolder}/envoy-perf/nighthawk/**",
                 "${workspaceFolder}/envoy-perf/nighthawk/envoy/**",
                 "/tmp/nighthawk_bazel_output_base/external/**"
             ],
@@ -19,13 +20,13 @@
                     "/usr/include",
                     "/usr/local/include",
                     "${workspaceFolder}/envoy-perf/**",
+                    "${workspaceFolder}/envoy-perf/nighthawk/**",
                     "${workspaceFolder}/envoy-perf/nighthawk/envoy/**",
                     "/tmp/nighthawk_bazel_output_base/external/**"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
-            },
-            "compileCommands": "${workspaceFolder}/envoy-perf/compile_commands.json"
+            }
         }
     ],
     "version": 4
