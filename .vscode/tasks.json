@@ -51,9 +51,9 @@
         {
             "label": "bazel coverage",
             "type": "shell",
-            "command": "bazel coverage --experimental_cc_coverage test/...  --instrumentation_filter=//nighthawk/...,. --coverage_report_generator=@bazel_tools//tools/test/CoverageOutputGenerator/java/com/google/devtools/coverageoutputgenerator:Main --combined_report=lcov; genhtml bazel-out/_coverage/_coverage_report.dat",
+            "command": "ci/do_ci.sh coverage",
             "options": {
-                "cwd": "envoy-perf/nighthawk"
+                "cwd": "envoy-perf"
             },
             "problemMatcher": [
                 "$gcc"
