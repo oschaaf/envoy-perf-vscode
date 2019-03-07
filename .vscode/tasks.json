@@ -51,7 +51,7 @@
         {
             "label": "bazel coverage",
             "type": "shell",
-            "command": "ci/run_docker.sh 'ci/do_ci.sh coverage'",
+            "command": "../tools/run_docker.sh 'ci/do_ci.sh coverage'",
             "options": {
                 "cwd": "envoy-perf"
             },
