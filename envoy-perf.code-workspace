@@ -68,7 +68,14 @@
 			"complex": "cpp",
 			"random": "cpp",
 			"algorithm": "cpp",
-			"any": "cpp"
+			"any": "cpp",
+			"hash_map": "cpp",
+			"hash_set": "cpp",
+			"cfenv": "cpp",
+			"csignal": "cpp",
+			"future": "cpp",
+			"scoped_allocator": "cpp",
+			"valarray": "cpp"
 		},
 		"editor.formatOnSave": true,
 		"doxdocgen.generic.authorEmail": "oschaaf@we-amp.com",
