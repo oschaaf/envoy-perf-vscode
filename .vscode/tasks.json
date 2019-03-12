@@ -34,6 +34,21 @@
             }
         },
         {
+            "label": "debug-build-test-gcc",
+            "type": "shell",
+            "command": "CC=gcc CXX=g++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //nighthawk/test:nighthawk_test",
+            "options": {
+                "cwd": "envoy-perf"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "opt-build",
             "type": "shell",
             "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //nighthawk:nighthawk_client",
@@ -215,7 +230,7 @@
         {
             "label": "valgrind-run-test-direct",
             "type": "shell",
-            "dependsOn": "debug-build-test",
+            "dependsOn": "debug-build-test-gcc",
             "command": "nighthawk/tools/valgrind-tests.sh",
             "options": {
                 "cwd": "envoy-perf"
