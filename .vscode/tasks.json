@@ -164,12 +164,12 @@
             "options": {
                 "env": {
                     "TEST_WORKSPACE": ".",
-                    "TEST_SRCDIR": "${workspaceRoot}/envoy-perf/nighthawk",
+                    "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
                     "ENVOY_IP_TEST_VERSIONS": "v4only"
                 },
                 "cwd": "envoy-perf/nighthawk"
             },
-            "command": "gdb --args bazel-bin/test/nighthawk_test",
+            "command": "gdb --args bazel-bin/nighthawk/test/nighthawk_test",
             "group": {
                 "kind": "test",
                 "isDefault": true
