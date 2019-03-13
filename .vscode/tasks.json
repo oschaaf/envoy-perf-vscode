@@ -64,9 +64,39 @@
             }
         },
         {
-            "label": "bazel coverage",
+            "label": "bazel ci coverage",
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh coverage'",
+            "options": {
+                "cwd": "envoy-perf"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel ci tsan",
+            "type": "shell",
+            "command": "../tools/run_docker.sh 'ci/do_ci.sh tsan'",
+            "options": {
+                "cwd": "envoy-perf"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel ci asan",
+            "type": "shell",
+            "command": "../tools/run_docker.sh 'ci/do_ci.sh asan'",
             "options": {
                 "cwd": "envoy-perf"
             },
@@ -230,7 +260,7 @@
         {
             "label": "valgrind-run-test-direct",
             "type": "shell",
-            "dependsOn": "debug-build-test-gcc",
+            "dependsOn": "debug-build-test",
             "command": "nighthawk/tools/valgrind-tests.sh",
             "options": {
                 "cwd": "envoy-perf"
