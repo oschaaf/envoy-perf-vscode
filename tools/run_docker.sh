@@ -20,6 +20,13 @@ USER_GROUP=root
 [[ -f .git ]] && [[ ! -d .git ]] && GIT_VOLUME_OPTION="-v $(git rev-parse --git-common-dir):$(git rev-parse --git-common-dir)"
 
 mkdir -p "${ENVOY_DOCKER_BUILD_DIR}"
+
+#docker run --rm -t -i -e HTTP_PROXY=${http_proxy} -e HTTPS_PROXY=${https_proxy} \
+#-u "${USER}":"${USER_GROUP}" -v "${ENVOY_DOCKER_BUILD_DIR}":/build ${GIT_VOLUME_OPTION} \
+#-v "$PWD":/source -e NUM_CPUS --cap-add SYS_PTRACE --cap-add NET_RAW --cap-add NET_ADMIN "${IMAGE_NAME}":"${IMAGE_ID}" \
+#/bin/bash 
+
+
 # Since we specify an explicit hash, docker-run will pull from the remote repo if missing.
 docker run --rm -t -i -e HTTP_PROXY=${http_proxy} -e HTTPS_PROXY=${https_proxy} \
 -u "${USER}":"${USER_GROUP}" -v "${ENVOY_DOCKER_BUILD_DIR}":/build ${GIT_VOLUME_OPTION} \
