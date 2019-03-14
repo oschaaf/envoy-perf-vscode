@@ -109,6 +109,36 @@
             }
         },
         {
+            "label": "asan test direct",
+            "type": "shell",
+            "command": "BAZEL_TEST_OPTIONS='--disk_cache=/home/oschaaf/bazel-build-cache/' ci/do_ci.sh asan",
+            "options": {
+                "cwd": "envoy-perf"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "tsan test direct",
+            "type": "shell",
+            "command": "BAZEL_TEST_OPTIONS='--disk_cache=/home/oschaaf/bazel-build-cache/' ci/do_ci.sh tsan",
+            "options": {
+                "cwd": "envoy-perf"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "opt-build-test",
             "type": "shell",
             "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //test:nighthawk_test",
