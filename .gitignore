@@ -1,3 +1,4 @@
 .vscode/browse.VC.db
 .vscode/.vs_code_bazel_build/BUILD
 .vscode/.vs_code_bazel_build/vs_code_aspect.bzl
+.vscode/ipch

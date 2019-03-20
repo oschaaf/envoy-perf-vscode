@@ -39,6 +39,10 @@
             "cwd": "${workspaceFolder}/envoy-perf/",
             "environment": [
                 {
+                    "name": "TEST_TMPDIR",
+                    "value": "/tmp/foo"
+                },
+                {
                     "name": "TEST_WORKSPACE",
                     "value": "."
                 },

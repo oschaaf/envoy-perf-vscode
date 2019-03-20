@@ -240,6 +240,7 @@
             "options": {
                 "env": {
                     "TEST_WORKSPACE": ".",
+                    "TEST_TMPDIR": "/tmp/foo",
                     "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
                     "ENVOY_IP_TEST_VERSIONS": "v4only"
                 },
@@ -275,6 +276,7 @@
             "options": {
                 "env": {
                     "TEST_WORKSPACE": ".",
+                    "TEST_TMPDIR": "/tmp/foo",
                     "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
                     "ENVOY_IP_TEST_VERSIONS": "v4only"
                 },
