@@ -207,14 +207,15 @@
                 "reveal": "always",
                 "focus": false,
                 "panel": "shared",
-                "showReuseMessage": true,
+                "showReuseMessage": false,
                 "clear": false
             },
             "options": {
                 "env": {
                     "TEST_WORKSPACE": ".",
+                    "TEST_TMPDIR": "/tmp/foo",
                     "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
-                    "ENVOY_IP_TEST_VERSIONS": "v4only"
+                    "ENVOY_IP_TEST_VERSIONS": ""
                 },
                 "cwd": "envoy-perf"
             },

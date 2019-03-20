@@ -48,7 +48,7 @@
                 },
                 {
                     "name": "ENVOY_IP_TEST_VERSIONS",
-                    "value": "v4only"
+                    "value": ""
                 }
             ],
             "externalConsole": false,
