@@ -215,7 +215,7 @@
                     "TEST_WORKSPACE": ".",
                     "TEST_TMPDIR": "/tmp/foo",
                     "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
-                    "ENVOY_IP_TEST_VERSIONS": ""
+                    "ENVOY_IP_TEST_VERSIONS": "all"
                 },
                 "cwd": "envoy-perf"
             },
