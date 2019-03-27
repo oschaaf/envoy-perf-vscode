@@ -184,9 +184,24 @@
             }
         },
         {
-            "label": "bazel-run-test",
+            "label": "bazel-run-test-direct",
             "type": "shell",
             "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c fastbuild //nighthawk/test:nighthawk_test",
+            "options": {
+                "cwd": "envoy-perf"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "do-ci-test",
+            "type": "shell",
+            "command": "../tools/run_docker.sh 'ci/do_ci.sh test'",
             "options": {
                 "cwd": "envoy-perf"
             },
