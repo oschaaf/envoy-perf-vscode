@@ -201,7 +201,7 @@
         {
             "label": "bazel-test-origin-build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //nighthawk/source/server:origin",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //nighthawk/source/server:test-origin",
             "options": {
                 "cwd": "envoy-perf"
             },
@@ -216,7 +216,7 @@
         {
             "label": "bazel-test-origin-tests",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c fastbuild //nighthawk/source/server:http_filter_integration_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c dbg //nighthawk/test/server:http_test_origin_filter_integration_test",
             "options": {
                 "cwd": "envoy-perf"
             },

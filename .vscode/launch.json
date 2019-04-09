@@ -68,5 +68,45 @@
                 }
             ]
         },
+        {
+            "name": "(gdb) test-server tests",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "bazel-test-origin-tests",
+            "program": "${workspaceRoot}/envoy-perf/bazel-bin/nighthawk/test/server/http_test_origin_filter_integration_test",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/envoy-perf/",
+            "environment": [
+                {
+                    "name": "TEST_TMPDIR",
+                    "value": "/tmp/foo"
+                },
+                {
+                    "name": "TEST_WORKSPACE",
+                    "value": "."
+                },
+                {
+                    "name": "TEST_SRCDIR",
+                    "value": "${workspaceRoot}/envoy-perf/"
+                },
+                {
+                    "name": "ENVOY_IP_TEST_VERSIONS",
+                    "value": ""
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "sourceFileMap": {
+                "/proc/self/cwd/external/envoy": "${workspaceFolder}/envoy-perf/nighthawk/envoy"
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
     ]
 }
