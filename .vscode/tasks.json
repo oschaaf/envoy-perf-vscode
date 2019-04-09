@@ -199,6 +199,36 @@
             }
         },
         {
+            "label": "bazel-test-origin-build",
+            "type": "shell",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //nighthawk/source/server:origin",
+            "options": {
+                "cwd": "envoy-perf"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel-test-origin-tests",
+            "type": "shell",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c fastbuild //nighthawk/source/server:http_filter_integration_test",
+            "options": {
+                "cwd": "envoy-perf"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
             "label": "do-ci-test",
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh test'",
