@@ -1,4 +1,3 @@
-[submodule "envoy-perf"]
-	path = envoy-perf
-	url = git@github.com:We-Amp/envoy-perf.git
-	branch = nighthawk
+[submodule "nighthawk"]
+	path = nighthawk
+	url = git@github.com:oschaaf/nighthawk.git
