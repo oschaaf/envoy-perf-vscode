@@ -6,19 +6,19 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "debug-build",
-            "program": "${workspaceRoot}/envoy-perf/bazel-bin/nighthawk/nighthawk_client",
+            "program": "${workspaceRoot}/nighthawk/bazel-bin/nighthawk_client",
             "args": [
                 "--rps",
                 "5",
                 "http://foo.we-amp.com/"
             ],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/envoy-perf/nighthawk/",
+            "cwd": "${workspaceFolder}/nighthawk/",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
             "sourceFileMap": {
-                "/proc/self/cwd/external": "${workspaceFolder}/envoy-perf/nighthawk/"
+                "/proc/self/cwd/external": "${workspaceFolder}/nighthawk/"
             },
             "setupCommands": [
                 {
@@ -33,10 +33,10 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "debug-build-test",
-            "program": "${workspaceRoot}/envoy-perf/bazel-bin/nighthawk/test/nighthawk_test",
+            "program": "${workspaceRoot}/nighthawk/bazel-bin/test/nighthawk_test",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/envoy-perf/",
+            "cwd": "${workspaceFolder}/nighthawk/",
             "environment": [
                 {
                     "name": "TEST_TMPDIR",
@@ -48,7 +48,7 @@
                 },
                 {
                     "name": "TEST_SRCDIR",
-                    "value": "${workspaceRoot}/envoy-perf/"
+                    "value": "${workspaceRoot}/nighthawk/"
                 },
                 {
                     "name": "ENVOY_IP_TEST_VERSIONS",
@@ -58,7 +58,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "sourceFileMap": {
-                "/proc/self/cwd/external/envoy": "${workspaceFolder}/envoy-perf/nighthawk/envoy"
+                "/proc/self/cwd/external/envoy": "${workspaceFolder}/nighthawk/envoy"
             },
             "setupCommands": [
                 {
@@ -73,10 +73,10 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "bazel-test-server-tests",
-            "program": "${workspaceRoot}/envoy-perf/bazel-bin/nighthawk/test/server/http_test_server_filter_integration_test",
+            "program": "${workspaceRoot}/nighthawk/bazel-bin/test/server/http_test_server_filter_integration_test",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/envoy-perf/",
+            "cwd": "${workspaceFolder}/nighthawk/",
             "environment": [
                 {
                     "name": "TEST_TMPDIR",
@@ -88,7 +88,7 @@
                 },
                 {
                     "name": "TEST_SRCDIR",
-                    "value": "${workspaceRoot}/envoy-perf/"
+                    "value": "${workspaceRoot}/nighthawk/"
                 },
                 {
                     "name": "ENVOY_IP_TEST_VERSIONS",
@@ -98,7 +98,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "sourceFileMap": {
-                "/proc/self/cwd/external/envoy": "${workspaceFolder}/envoy-perf/nighthawk/envoy"
+                "/proc/self/cwd/external/envoy": "${workspaceFolder}/nighthawk/envoy"
             },
             "setupCommands": [
                 {

@@ -5,9 +5,9 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
-                "${workspaceFolder}/envoy-perf/**",
-                "${workspaceFolder}/envoy-perf/nighthawk/**",
-                "${workspaceFolder}/envoy-perf/nighthawk/envoy/**",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/nighthawk/**",
+                "${workspaceFolder}/nighthawk/envoy/**",
                 "/tmp/nighthawk_bazel_output_base/external/**"
             ],
             "defines": [],
@@ -19,9 +19,9 @@
                 "path": [
                     "/usr/include",
                     "/usr/local/include",
-                    "${workspaceFolder}/envoy-perf/**",
-                    "${workspaceFolder}/envoy-perf/nighthawk/**",
-                    "${workspaceFolder}/envoy-perf/nighthawk/envoy/**",
+                    "${workspaceFolder}/**",
+                    "${workspaceFolder}/nighthawk/**",
+                    "${workspaceFolder}/nighthawk/envoy/**",
                     "/tmp/nighthawk_bazel_output_base/external/**"
                 ],
                 "limitSymbolsToIncludedHeaders": true,

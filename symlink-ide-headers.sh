@@ -8,7 +8,7 @@
 set -e
 
 if [ -f envoy-perf.code-workspace ]; then
-    cd envoy-perf
+    cd nighthawk
     target=$(bazel info output_base)
     ln -sf "$target" /tmp/nighthawk_bazel_output_base
     echo "Symlinked $target to /tmp/nighthawk_bazel_output_base"

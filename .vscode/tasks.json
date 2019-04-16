@@ -6,9 +6,9 @@
         {
             "label": "debug-build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //nighthawk:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //::nighthawk_client",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -21,9 +21,9 @@
         {
             "label": "debug-build-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //nighthawk/test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //:/test:nighthawk_test",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -36,9 +36,9 @@
         {
             "label": "debug-build-test-gcc",
             "type": "shell",
-            "command": "CC=gcc CXX=g++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //nighthawk/test:nighthawk_test",
+            "command": "CC=gcc CXX=g++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //:/test:nighthawk_test",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -51,9 +51,9 @@
         {
             "label": "opt-build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //nighthawk:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //::nighthawk_client",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -68,7 +68,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh coverage'",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -83,7 +83,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh tsan'",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -98,7 +98,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh asan'",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -113,7 +113,7 @@
             "type": "shell",
             "command": "BAZEL_TEST_OPTIONS='--disk_cache=/home/oschaaf/bazel-build-cache/' ci/do_ci.sh asan",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -128,7 +128,7 @@
             "type": "shell",
             "command": "BAZEL_TEST_OPTIONS='--disk_cache=/home/oschaaf/bazel-build-cache/' ci/do_ci.sh tsan",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -143,7 +143,7 @@
             "type": "shell",
             "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //test:nighthawk_test",
             "options": {
-                "cwd": "envoy-perf/nighthawk"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -156,9 +156,9 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //nighthawk:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //::nighthawk_client",
             "options": {
-                "cwd": "envoy-perf/nighthawk"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -171,9 +171,9 @@
         {
             "label": "build-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //nighthawk/test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //:/test:nighthawk_test",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -186,9 +186,9 @@
         {
             "label": "bazel-run-test-direct",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c fastbuild //nighthawk/test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c fastbuild //:/test:nighthawk_test",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -201,9 +201,9 @@
         {
             "label": "bazel-test-server-build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //nighthawk:nighthawk_test_server",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //:_test_server",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -216,9 +216,9 @@
         {
             "label": "bazel-test-server-tests",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c dbg //nighthawk/test/server:http_test_server_filter_integration_test",
+            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c dbg //test/server:http_test_server_filter_integration_test",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -233,7 +233,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh test'",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -259,10 +259,10 @@
                 "env": {
                     "TEST_WORKSPACE": ".",
                     "TEST_TMPDIR": "/tmp/foo",
-                    "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
+                    "TEST_SRCDIR": "${workspaceRoot}/nighthawk",
                     "ENVOY_IP_TEST_VERSIONS": "all"
                 },
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "command": "bazel-bin/nighthawk/test/nighthawk_test",
             "group": {
@@ -286,10 +286,10 @@
                 "env": {
                     "TEST_WORKSPACE": ".",
                     "TEST_TMPDIR": "/tmp/foo",
-                    "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
+                    "TEST_SRCDIR": "${workspaceRoot}/nighthawk",
                     "ENVOY_IP_TEST_VERSIONS": ""
                 },
-                "cwd": "envoy-perf/nighthawk"
+                "cwd": "nighthawk/nighthawk"
             },
             "command": "gdb --args bazel-bin/nighthawk/test/nighthawk_test",
             "group": {
@@ -303,7 +303,7 @@
             "dependsOn": "debug-build",
             "command": "nighthawk/tools/valgrind.sh",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -322,10 +322,10 @@
                 "env": {
                     "TEST_WORKSPACE": ".",
                     "TEST_TMPDIR": "/tmp/foo",
-                    "TEST_SRCDIR": "${workspaceRoot}/envoy-perf",
+                    "TEST_SRCDIR": "${workspaceRoot}/nighthawk",
                     "ENVOY_IP_TEST_VERSIONS": ""
                 },
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -341,7 +341,7 @@
             "dependsOn": "debug-build-test",
             "command": "nighthawk/tools/valgrind-tests.sh",
             "options": {
-                "cwd": "envoy-perf"
+                "cwd": "nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
