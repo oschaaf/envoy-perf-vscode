@@ -109,6 +109,21 @@
             }
         },
         {
+            "label": "clang-tidy via docker",
+            "type": "shell",
+            "command": "../tools/run_docker.sh 'ci/do_ci.sh clang_tidy'",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "asan test direct",
             "type": "shell",
             "command": "BAZEL_TEST_OPTIONS='--disk_cache=/home/oschaaf/bazel-build-cache/' ci/do_ci.sh asan",
