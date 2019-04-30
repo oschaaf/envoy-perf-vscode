@@ -6,7 +6,7 @@
         {
             "label": "debug-build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-8/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //:nighthawk_client",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -21,7 +21,7 @@
         {
             "label": "debug-build-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-8/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c dbg //test:nighthawk_test",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -51,7 +51,7 @@
         {
             "label": "opt-build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-8/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //:nighthawk_client",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -141,7 +141,7 @@
         {
             "label": "opt-build-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-8/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c opt //test:nighthawk_test",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -156,7 +156,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //:nighthawk_client",
+            "command": "PATH=/usr/lib/llvm-8/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //:nighthawk_client",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -171,7 +171,7 @@
         {
             "label": "build-test",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-8/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //test:nighthawk_test",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -186,7 +186,7 @@
         {
             "label": "bazel-run-test-direct",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c dbg //test:nighthawk_test",
+            "command": "PATH=/usr/lib/llvm-8/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c dbg //test:nighthawk_test",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -201,7 +201,7 @@
         {
             "label": "bazel-test-server-build",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //:_test_server",
+            "command": "PATH=/usr/lib/llvm-8/bin:$PATH CC=clang CXX=clang++ bazel build --disk_cache=/home/oschaaf/bazel-build-cache/ -c fastbuild //:_test_server",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -216,7 +216,7 @@
         {
             "label": "bazel-test-server-tests",
             "type": "shell",
-            "command": "PATH=/usr/lib/llvm-7/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c dbg //test/server:http_test_server_filter_integration_test",
+            "command": "PATH=/usr/lib/llvm-8/bin:$PATH CC=clang CXX=clang++ bazel test --disk_cache=/home/oschaaf/bazel-build-cache/  --cache_test_results=no -c dbg //test/server:http_test_server_filter_integration_test",
             "options": {
                 "cwd": "nighthawk"
             },

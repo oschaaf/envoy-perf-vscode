@@ -11,9 +11,10 @@
                 "/tmp/nighthawk_bazel_output_base/external/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/lib/llvm-7/bin/clang++",
+            "compilerPath": "/usr/lib/llvm-8/bin/clang++",
+            "compileCommands": "${workspaceFolder}/nighthawk/compile_commands.json",
             "cStandard": "c11",
-            "cppStandard": "c++17",
+            "cppStandard": "c++11",
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
