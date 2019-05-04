@@ -82,6 +82,17 @@
 		},
 		"editor.formatOnSave": true,
 		"doxdocgen.generic.authorEmail": "oschaaf@we-amp.com",
-		"doxdocgen.generic.authorName": "Otto van der Schaaf"
+		"doxdocgen.generic.authorName": "Otto van der Schaaf",
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"terminal.integrated.shellArgs.linux": [
+			"-l"
+		],
+		"terminal.integrated.env.linux": {
+			"CC": "/usr/lib/llvm-8/bin/clang",
+			"CXX": "/usr/lib/llvm-8/bin/clang++"
+		},
+		"bazel.buildifierFixOnFormat": true,
+		"bazel.buildifierExecutable": "/home/oschaaf/bin/buildifier",
+		"clang-format.executable": ""
 	}
 }

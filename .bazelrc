@@ -1,0 +1,4 @@
+
+# e.g. put this in your user directory
+build --remote_http_cache=http://127.0.0.1:28080/
+build --override_repository envoy=/home/oschaaf/code/envoy-perf-vscode/nighthawk/envoy

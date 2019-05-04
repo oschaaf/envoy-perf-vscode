@@ -5,9 +5,10 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/nighthawk/**",
-                "${workspaceFolder}/bazel-nighthawk/**"
+                "${workspaceFolder}/nighthawk/external/**",
+                "${workspaceFolder}/nighthawk/envoy/source/**",
+                "${workspaceFolder}/nighthawk/envoy/include/**",
+                "${workspaceFolder}/nighthawk/include"
             ],
             "defines": [],
             "compilerPath": "/usr/lib/llvm-8/bin/clang++",
@@ -21,7 +22,7 @@
                     "/usr/local/include",
                     "${workspaceFolder}/**",
                     "${workspaceFolder}/nighthawk/**",
-                    "${workspaceFolder}/bazel-nighthawk/**"
+                    "/tmp/nighthawk_bazel_output_base"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
