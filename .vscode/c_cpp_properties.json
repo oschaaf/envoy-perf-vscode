@@ -22,7 +22,7 @@
                     "/usr/local/include",
                     "${workspaceFolder}/**",
                     "${workspaceFolder}/nighthawk/**",
-                    "/tmp/nighthawk_bazel_output_base"
+                    "${workspaceFolder}/nighthawk/external/**"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""

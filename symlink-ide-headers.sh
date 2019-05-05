@@ -10,7 +10,7 @@ set -e
 if [ -f envoy-perf.code-workspace ]; then
     cd nighthawk
     target=$(bazel info output_base)
-    ln -sf "$target/external" external
+    ln -sf "$target/external/" external
     echo "Symlinked $target to $(pwd)/external"
 else
     echo "This script should be executed from the git root"
