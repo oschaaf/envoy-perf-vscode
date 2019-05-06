@@ -93,6 +93,6 @@
 		},
 		"bazel.buildifierFixOnFormat": true,
 		"bazel.buildifierExecutable": "/home/oschaaf/bin/buildifier",
-		"clang-format.executable": ""
+		"clang-format.executable": "/usr/lib/llvm-8/bin/clang-format"
 	}
 }
