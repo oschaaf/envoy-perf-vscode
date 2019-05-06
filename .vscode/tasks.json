@@ -264,7 +264,7 @@
                 },
                 "cwd": "nighthawk"
             },
-            "command": "bazel-bin/nighthawk/test/nighthawk_test",
+            "command": "bazel-bin/test/nighthawk_test",
             "group": {
                 "kind": "test",
                 "isDefault": true
