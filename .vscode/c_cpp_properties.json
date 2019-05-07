@@ -5,24 +5,28 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
-                "${workspaceFolder}/nighthawk/external/**",
-                "${workspaceFolder}/nighthawk/envoy/source/**",
-                "${workspaceFolder}/nighthawk/envoy/include/**",
-                "${workspaceFolder}/nighthawk/include"
+                "${workspaceFolder}/nighthawk/bazel-nighthawk/external/**",
+                "${workspaceFolder}/nighthawk/bazel-genfiles/external/envoy_api/",
+                "${workspaceFolder}/nighthawk/bazel-genfiles/",
+                "${workspaceFolder}/nighthawk/bazel-genfiles/external/**",
+                "${workspaceFolder}/nighthawk/include/",
+                "${workspaceFolder}/nighthawk/source/"
             ],
             "defines": [],
             "compilerPath": "/usr/lib/llvm-8/bin/clang++",
-            "compileCommands": "${workspaceFolder}/nighthawk/compile_commands.json",
             "cStandard": "c11",
-            "cppStandard": "c++11",
+            "cppStandard": "c++14",
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
                     "/usr/include",
                     "/usr/local/include",
-                    "${workspaceFolder}/**",
-                    "${workspaceFolder}/nighthawk/**",
-                    "${workspaceFolder}/nighthawk/external/**"
+                    "${workspaceFolder}/nighthawk/bazel-nighthawk/external/**",
+                    "${workspaceFolder}/nighthawk/bazel-genfiles/external/envoy_api/",
+                    "${workspaceFolder}/nighthawk/bazel-genfiles/",
+                    "${workspaceFolder}/nighthawk/bazel-genfiles/external/**",
+                    "${workspaceFolder}/nighthawk/include/",
+                    "${workspaceFolder}/nighthawk/source/"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
