@@ -4,6 +4,15 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "start-build-cache",
+            "type": "shell",
+            "command": "go run github.com/buchgr/bazel-remote --dir ${HOME}/bazel_cache --host 127.0.0.1 --port 28080 --max_size 150 &",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "debug-build",
             "type": "shell",
             "command": "bazel build  -c dbg //:nighthawk_client",
