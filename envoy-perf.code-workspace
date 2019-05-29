@@ -78,7 +78,8 @@
 			"valarray": "cpp",
 			"filesystem": "cpp",
 			"*.inc": "cpp",
-			"shared_mutex": "cpp"
+			"shared_mutex": "cpp",
+			"cerrno": "cpp"
 		},
 		"editor.formatOnSave": true,
 		"doxdocgen.generic.authorEmail": "oschaaf@we-amp.com",
