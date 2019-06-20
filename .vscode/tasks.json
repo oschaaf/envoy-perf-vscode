@@ -210,7 +210,7 @@
         {
             "label": "bazel-integration-test",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no --test_output=all -c dbg //test/integration:integration_test",
+            "command": "bazel test --test_env=ENVOY_IP_TEST_VERSIONS=all --cache_test_results=no  -c dbg //test/integration:integration_test",
             "options": {
                 "cwd": "nighthawk"
             },
