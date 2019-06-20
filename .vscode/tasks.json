@@ -195,7 +195,22 @@
         {
             "label": "bazel-run-test-direct",
             "type": "shell",
-            "command": "bazel test   --cache_test_results=no -c dbg //test:nighthawk_test",
+            "command": "bazel test --cache_test_results=no -c dbg //test:nighthawk_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel-integration-test",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no --test_output=all -c dbg //test/integration:integration_test",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -225,7 +240,7 @@
         {
             "label": "bazel-test-server-tests",
             "type": "shell",
-            "command": "bazel test   --cache_test_results=no -c dbg //test/server:http_test_server_filter_integration_test",
+            "command": "bazel test --cache_test_results=no -c dbg //test/server:http_test_server_filter_integration_test",
             "options": {
                 "cwd": "nighthawk"
             },
