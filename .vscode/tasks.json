@@ -253,6 +253,21 @@
             }
         },
         {
+            "label": "run-all-tests",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no -c dbg //test:nighthawk_test //test/server:http_test_server_filter_integration_test //integration:integration_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
             "label": "do-ci-test",
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh test'",
