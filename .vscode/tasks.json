@@ -120,7 +120,7 @@
         {
             "label": "asan test direct",
             "type": "shell",
-            "command": "BAZEL_TEST_OPTIONS='' ci/do_ci.sh asan",
+            "command": "ci/do_ci.sh asan",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -271,6 +271,21 @@
             "label": "do-ci-test",
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh test'",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "fix-format-docker",
+            "type": "shell",
+            "command": "../tools/run_docker.sh 'tools/check_format.sh fix'",
             "options": {
                 "cwd": "nighthawk"
             },
