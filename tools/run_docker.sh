@@ -3,7 +3,7 @@
 set -e
 
 # TODO(oschaaf): pull this sha
-ENVOY_BUILD_SHA=d0cefa7f071dbd4ef24399c2db8656c3a5d8c3ef
+ENVOY_BUILD_SHA=cfc514546bc0284536893cca5fa43d7128edcd35
 
 # We run as root and later drop permissions. This is required to setup the USER
 # in useradd below, which is need for correct Python execution in the Docker
@@ -32,4 +32,4 @@ docker run --rm -t -i -e HTTP_PROXY=${http_proxy} -e HTTPS_PROXY=${https_proxy} 
 -u "${USER}":"${USER_GROUP}" -v "${ENVOY_DOCKER_BUILD_DIR}":/build ${GIT_VOLUME_OPTION} \
 -v "$PWD":/source -e NUM_CPUS --cap-add SYS_PTRACE --cap-add NET_RAW --cap-add NET_ADMIN "${IMAGE_NAME}":"${IMAGE_ID}" \
 /bin/bash -lc "groupadd --gid $(id -g) -f envoygroup && useradd -o --uid $(id -u) --gid $(id -g) --no-create-home \
-  --home-dir /source envoybuild && usermod -a -G pcap envoybuild && su envoybuild -c \"cd source &&  $*\""
+  --home-dir /source envoybuild && chmod a+rw /build && usermod -a -G pcap envoybuild && su envoybuild -c \"cd source &&  $*\""
