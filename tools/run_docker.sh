@@ -3,7 +3,7 @@
 set -e
 
 # TODO(oschaaf): pull this sha
-ENVOY_BUILD_SHA=cfc514546bc0284536893cca5fa43d7128edcd35
+ENVOY_BUILD_SHA=d0cefa7f071dbd4ef24399c2db8656c3a5d8c3ef
 
 # We run as root and later drop permissions. This is required to setup the USER
 # in useradd below, which is need for correct Python execution in the Docker
