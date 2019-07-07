@@ -393,7 +393,7 @@
             "label": "valgrind-run-test-direct",
             "type": "shell",
             "dependsOn": "debug-build-test",
-            "command": "nighthawk/tools/valgrind-tests.sh",
+            "command": "tools/valgrind-tests.sh",
             "options": {
                 "cwd": "nighthawk"
             },
