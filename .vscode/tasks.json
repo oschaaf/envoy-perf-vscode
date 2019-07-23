@@ -193,9 +193,24 @@
             }
         },
         {
-            "label": "bazel-run-test-direct",
+            "label": "bazel-run-all-tests-direct",
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test/... //integration/...",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel //test:nighthawk_test",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no -c dbg //test:nighthawk_test",
             "options": {
                 "cwd": "nighthawk"
             },
