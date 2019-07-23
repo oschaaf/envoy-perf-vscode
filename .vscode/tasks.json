@@ -15,7 +15,7 @@
         {
             "label": "debug-build",
             "type": "shell",
-            "command": "bazel build  -c dbg //:nighthawk_client //:nighthawk_service //:nighthawk_test_server",
+            "command": "bazel build  -c dbg //:nighthawk_client nighthawk_test_server nighthawk_service",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -195,7 +195,7 @@
         {
             "label": "bazel-run-test-direct",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no -c dbg //test:nighthawk_test",
+            "command": "bazel test --cache_test_results=no -c dbg //test/... //integration/...",
             "options": {
                 "cwd": "nighthawk"
             },
