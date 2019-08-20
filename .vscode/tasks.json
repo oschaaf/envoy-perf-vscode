@@ -300,7 +300,7 @@
         {
             "label": "fix-format-docker",
             "type": "shell",
-            "command": "../tools/run_docker.sh 'tools/check_format.sh fix'",
+            "command": "../tools/run_docker.sh 'ci/do_ci.sh check_format'",
             "options": {
                 "cwd": "nighthawk"
             },
