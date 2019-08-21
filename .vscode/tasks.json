@@ -30,7 +30,7 @@
         {
             "label": "debug-build-test",
             "type": "shell",
-            "command": "bazel build  -c dbg //test:nighthawk_test",
+            "command": "bazel build  -c dbg //test/...",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -180,7 +180,7 @@
         {
             "label": "build-test",
             "type": "shell",
-            "command": "bazel build  -c fastbuild //test:nighthawk_test",
+            "command": "bazel build  -c fastbuild //test/...",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -195,7 +195,7 @@
         {
             "label": "bazel-run-all-tests-direct",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no -c dbg //test/...,
+            "command": "bazel test --cache_test_results=no -c dbg //test/...",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -208,9 +208,9 @@
             }
         },
         {
-            "label": "bazel //test:nighthawk_test",
+            "label": "bazel //test:*",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no -c dbg //test:nighthawk_test",
+            "command": "bazel test --cache_test_results=no -c dbg //test:*"
             "options": {
                 "cwd": "nighthawk"
             },
@@ -225,7 +225,7 @@
         {
             "label": "bazel //test:nighthawk_test repeat backtoback",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=1000 --test_arg=--gtest_filter='IpVersions/ServiceTest.BackToBackExecution/IPv6' --jobs 250 -c dbg //test:nighthawk_test",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=1000 --test_arg=--gtest_filter='IpVersions/ServiceTest.BackToBackExecution/IPv6' --jobs 250 -c dbg //test:*",
             "options": {
                 "cwd": "nighthawk"
             },
