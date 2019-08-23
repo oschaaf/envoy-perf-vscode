@@ -210,7 +210,7 @@
         {
             "label": "bazel //test:*",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no -c dbg //test:*"
+            "command": "bazel test --cache_test_results=no  --jobs 160 -c dbg //test:*"
             "options": {
                 "cwd": "nighthawk"
             },
@@ -223,9 +223,24 @@
             }
         },
         {
-            "label": "bazel //test:nighthawk_test repeat backtoback",
+            "label": "bazel //test:nighthawk_test repeat servicetest",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=1000 --test_arg=--gtest_filter='IpVersions/ServiceTest.BackToBackExecution/IPv6' --jobs 250 -c dbg //test:*",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=2500 --test_arg=--gtest_filter='IpVersions/ServiceTest.BackToBackExecution/IPv6' --jobs 500 -c dbg --local_resources 80000,500,0.25 //test:service_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel //test:nighthawk_test repeat all",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=2000 --jobs 500 -c dbg --local_resources 80000,500,0.25 //test:*",
             "options": {
                 "cwd": "nighthawk"
             },

@@ -80,7 +80,13 @@
 			"*.inc": "cpp",
 			"shared_mutex": "cpp",
 			"cerrno": "cpp",
-			"csetjmp": "cpp"
+			"csetjmp": "cpp",
+			"iterator": "cpp",
+			"map": "cpp",
+			"memory_resource": "cpp",
+			"regex": "cpp",
+			"set": "cpp",
+			"string": "cpp"
 		},
 		"editor.formatOnSave": true,
 		"doxdocgen.generic.authorEmail": "oschaaf@we-amp.com",
