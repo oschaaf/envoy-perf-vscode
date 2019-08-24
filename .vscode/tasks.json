@@ -268,21 +268,6 @@
             }
         },
         {
-            "label": "bazel-test-server-build",
-            "type": "shell",
-            "command": "bazel build  -c fastbuild //:_test_server",
-            "options": {
-                "cwd": "nighthawk"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
             "label": "bazel-test-server-tests",
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test/server:http_test_server_filter_integration_test",
