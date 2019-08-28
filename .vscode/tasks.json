@@ -223,9 +223,24 @@
             }
         },
         {
-            "label": "bazel //test:nighthawk_test repeat servicetest",
+            "label": "bazel //test:nighthawk_test repeat ServiceTest.BackToBackExecution",
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=2500 --test_arg=--gtest_filter='IpVersions/ServiceTest.BackToBackExecution/IPv6' --jobs 500 -c dbg --local_resources 80000,500,0.25 //test:service_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel //test:nighthawk_test repeat ServiceTest all 5000x",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=5000 --test_arg=--gtest_filter='IpVersions/ServiceTest.*/*' --jobs 500 -c dbg --local_resources 80000,500,0.25 //test:service_test",
             "options": {
                 "cwd": "nighthawk"
             },

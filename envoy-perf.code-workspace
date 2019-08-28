@@ -101,6 +101,10 @@
 		},
 		"bazel.buildifierFixOnFormat": true,
 		"bazel.buildifierExecutable": "/home/oschaaf/bin/buildifier",
-		"clang-format.executable": "/usr/lib/llvm-8/bin/clang-format"
+		"clang-format.executable": "/usr/lib/llvm-8/bin/clang-format",
+		"typescript.tsc.autoDetect": "off",
+		"gulp.autoDetect": "off",
+		"jake.autoDetect": "off",
+		"grunt.autoDetect": "off"
 	}
 }

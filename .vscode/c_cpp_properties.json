@@ -30,8 +30,7 @@
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
-            },
-            "compileCommands": "${workspaceFolder}/nighthawk/compile_commands.json"
+            }
         }
     ],
     "version": 4
