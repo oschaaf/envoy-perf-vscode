@@ -33,7 +33,7 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "debug-build-test",
-            "program": "${workspaceRoot}/nighthawk/bazel-bin/test/nighthawk_test",
+            "program": "${workspaceRoot}/nighthawk/bazel-bin/test/service_test",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/nighthawk/",
