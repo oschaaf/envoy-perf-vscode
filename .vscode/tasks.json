@@ -45,7 +45,7 @@
         {
             "label": "opt-build",
             "type": "shell",
-            "command": "bazel build  -c opt //:nighthawk_client nighthawk_test_server",
+            "command": "bazel build  -c opt //:nighthawk_client nighthawk_test_server nighthawk_service",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -165,7 +165,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "bazel build  -c fastbuild //:nighthawk_client",
+            "command": "bazel build  -c fastbuild //:nighthawk_client  nighthawk_test_server nighthawk_service",
             "options": {
                 "cwd": "nighthawk"
             },
