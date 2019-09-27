@@ -28,6 +28,21 @@
             }
         },
         {
+            "label": "debug-build (zipkin disabled)",
+            "type": "shell",
+            "command": "bazel build -c dbg --define zipkin_disabled=1 //:nighthawk_client nighthawk_test_server nighthawk_service",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "debug-build-test",
             "type": "shell",
             "command": "bazel build  -c dbg //test/...",
@@ -316,6 +331,21 @@
             "label": "bazel //test/...",
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test/...",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel //test/... no zipkin",
+            "type": "shell",
+            "command": "bazel test --define zipkin_disabled=1 --cache_test_results=no -c dbg //test/...",
             "options": {
                 "cwd": "nighthawk"
             },
