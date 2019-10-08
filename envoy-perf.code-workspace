@@ -6,7 +6,7 @@
 	],
 	"settings": {
 		"git.fetchOnPull": true,
-		"git.autofetch": true,
+		"git.autofetch": false,
 		"git.alwaysSignOff": true,
 		"git.enableCommitSigning": true,
 		"files.associations": {
