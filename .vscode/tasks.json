@@ -15,7 +15,7 @@
         {
             "label": "debug-build",
             "type": "shell",
-            "command": "bazel build  -c dbg //:nighthawk_client nighthawk_test_server nighthawk_service",
+            "command": "bazel build  -c dbg //:nighthawk_client nighthawk_test_server nighthawk_service nighthawk_output_transform",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -31,21 +31,6 @@
             "label": "debug-build (zipkin disabled)",
             "type": "shell",
             "command": "bazel build -c dbg --define zipkin_disabled=1 //:nighthawk_client nighthawk_test_server nighthawk_service",
-            "options": {
-                "cwd": "nighthawk"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "debug-build-test",
-            "type": "shell",
-            "command": "bazel build  -c dbg //test/...",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -223,9 +208,9 @@
             }
         },
         {
-            "label": "bazel //test:*",
+            "label": "bazel //benchmarks:*",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no  --jobs 160 -c dbg //test:*"
+            "command": "bazel test --cache_test_results=no --compilation_mode=opt --cxxopt=-g --cxxopt=-ggdb3 //benchmarks:*"
             "options": {
                 "cwd": "nighthawk"
             },
@@ -256,6 +241,21 @@
             "label": "bazel //test:nighthawk_test repeat ServiceTest all 5000x",
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=1000 --test_arg=--gtest_filter='IpVersions/ServiceTest.*/*' --jobs 50 -c dbg --local_resources 20000,50,0.25 //test:service_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel //test:python_test repeat python_test all 50x",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=10 --jobs 1 -c dbg --local_resources 20000,50,0.25 //test:python_test",
             "options": {
                 "cwd": "nighthawk"
             },
