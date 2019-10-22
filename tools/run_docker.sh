@@ -3,7 +3,7 @@
 set -e
 
 # TODO(oschaaf): pull this sha
-ENVOY_BUILD_SHA=8246167b9d238797cbc6c03dccc9e3921c37617d
+ENVOY_BUILD_SHA=47380d6ec4a83599fc0fce8f6ef5ee216ecb06c643d195fa43ba6c71f878a9ea
 
 # We run as root and later drop permissions. This is required to setup the USER
 # in useradd below, which is need for correct Python execution in the Docker
@@ -11,7 +11,7 @@ ENVOY_BUILD_SHA=8246167b9d238797cbc6c03dccc9e3921c37617d
 USER=root
 USER_GROUP=root
 
-[[ -z "${IMAGE_NAME}" ]] && IMAGE_NAME="envoyproxy/envoy-build-ubuntu"
+[[ -z "${IMAGE_NAME}" ]] && IMAGE_NAME="envoyproxy/envoy-build-ubuntu@sha256"
 # The IMAGE_ID defaults to the CI hash but can be set to an arbitrary image ID (found with 'docker
 # images').
 [[ -z "${IMAGE_ID}" ]] && IMAGE_ID="${ENVOY_BUILD_SHA}"
