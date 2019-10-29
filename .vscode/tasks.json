@@ -313,6 +313,21 @@
             }
         },
         {
+            "label": "update_cli_readme_documentation",
+            "type": "shell",
+            "command": "tools/update_cli_readme_documentation.sh",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "bazel-test-server-tests",
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test/server:http_test_server_filter_integration_test",
