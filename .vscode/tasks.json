@@ -163,6 +163,21 @@
             }
         },
         {
+            "label": "debug-build-test",
+            "type": "shell",
+            "command": "bazel build  -c dbg //test:*",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "build",
             "type": "shell",
             "command": "bazel build  -c fastbuild //:nighthawk_client  nighthawk_test_server nighthawk_service",
@@ -315,7 +330,22 @@
         {
             "label": "update_cli_readme_documentation",
             "type": "shell",
-            "command": "tools/update_cli_readme_documentation.sh",
+            "command": "tools/update_cli_readme_documentation.sh --mode fix",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "check_cli_readme_documentation",
+            "type": "shell",
+            "command": "tools/update_cli_readme_documentation.sh --mode check",
             "options": {
                 "cwd": "nighthawk"
             },
