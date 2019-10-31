@@ -225,7 +225,7 @@
         {
             "label": "bazel //benchmarks:*",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no --compilation_mode=opt --cxxopt=-g --cxxopt=-ggdb3 //benchmarks:*"
+            "command": "bazel test --test_env=ENVOY_IP_TEST_VERSIONS=v4only --test_env=HEAPPROFILE= --test_env=HEAPCHECK= --cache_test_results=no --compilation_mode=opt --cxxopt=-g --cxxopt=-ggdb3 //benchmarks:*"
             "options": {
                 "cwd": "nighthawk"
             },
