@@ -86,7 +86,8 @@
 			"memory_resource": "cpp",
 			"regex": "cpp",
 			"set": "cpp",
-			"string": "cpp"
+			"string": "cpp",
+			"bit": "cpp"
 		},
 		"editor.formatOnSave": true,
 		"doxdocgen.generic.authorEmail": "oschaaf@we-amp.com",
