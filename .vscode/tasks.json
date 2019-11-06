@@ -375,7 +375,7 @@
         {
             "label": "bazel //test/...",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no -c dbg //test/...",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=v4only -c dbg //test/...",
             "options": {
                 "cwd": "nighthawk"
             },
