@@ -28,8 +28,8 @@
                     "${workspaceFolder}/nighthawk/include/",
                     "${workspaceFolder}/nighthawk/source/"
                 ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": "${workspaceFolder}/nighthawk/compile_commands.json"
+                "limitSymbolsToIncludedHeaders": true //,
+                //"databaseFilename": "${workspaceFolder}/nighthawk/compile_commands.json"
             }
         }
     ],
