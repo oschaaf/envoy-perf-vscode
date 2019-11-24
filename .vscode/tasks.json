@@ -418,6 +418,21 @@
             }
         },
         {
+            "label": "bazel //test:request_stream_grpc_client_test",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no -c dbg //test:request_stream_grpc_client_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
             "label": "bazel //test/... no zipkin",
             "type": "shell",
             "command": "bazel test --define zipkin_disabled=1 --cache_test_results=no -c dbg //test/...",
