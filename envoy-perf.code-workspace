@@ -97,11 +97,11 @@
 			"-l"
 		],
 		"terminal.integrated.env.linux": {
-			"CC": "/usr/lib/llvm-8/bin/clang",
-			"CXX": "/usr/lib/llvm-8/bin/clang++"
+			"CC": "/usr/lib/llvm-9/bin/clang",
+			"CXX": "/usr/lib/llvm-9/bin/clang++"
 		},
 		"bazel.buildifierFixOnFormat": true,
-		"clang-format.executable": "/usr/lib/llvm-8/bin/clang-format",
+		"clang-format.executable": "/usr/lib/llvm-9/bin/clang-format",
 		"typescript.tsc.autoDetect": "off",
 		"gulp.autoDetect": "off",
 		"jake.autoDetect": "off",
