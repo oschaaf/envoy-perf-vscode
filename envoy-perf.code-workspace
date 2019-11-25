@@ -101,7 +101,6 @@
 			"CXX": "/usr/lib/llvm-8/bin/clang++"
 		},
 		"bazel.buildifierFixOnFormat": true,
-		"bazel.buildifierExecutable": "/home/oschaaf/bin/buildifier",
 		"clang-format.executable": "/usr/lib/llvm-8/bin/clang-format",
 		"typescript.tsc.autoDetect": "off",
 		"gulp.autoDetect": "off",

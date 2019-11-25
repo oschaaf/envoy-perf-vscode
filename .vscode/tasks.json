@@ -268,9 +268,24 @@
             }
         },
         {
+            "label": "bazel //test:python_test",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=v4only -c dbg //test:python_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
             "label": "bazel //test:python_test repeat python_test all 50x",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=10 --jobs 1 -c dbg --local_resources 20000,50,0.25 //test:python_test",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=10 -c dbg --local_resources 20000,50,0.25 //test:python_test",
             "options": {
                 "cwd": "nighthawk"
             },
