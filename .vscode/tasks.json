@@ -390,7 +390,7 @@
         {
             "label": "bazel //test/...",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=v4only -c dbg //test/...",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=v4only --local_resources 16000,6,0.25 -c dbg //test/...",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -421,6 +421,21 @@
             "label": "bazel //test:rate_limiter_test",
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:rate_limiter_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel //test:output_formatter_test",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no -c dbg //test:output_formatter_test",
             "options": {
                 "cwd": "nighthawk"
             },
