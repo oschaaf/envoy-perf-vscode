@@ -73,6 +73,21 @@
             }
         },
         {
+            "label": "docker build and push",
+            "type": "shell",
+            "command": "ci/do_ci.sh docker && ../tools/push_nighthawk_docker.sh",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "bazel ci tsan",
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh tsan'",
