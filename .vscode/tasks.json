@@ -448,6 +448,36 @@
             }
         },
         {
+            "label": "bazel //test:client_worker_test",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no -c dbg //test:client_worker_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel //test:termination_predicate_test",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no -c dbg //test:termination_predicate_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
             "label": "bazel //test:options_test",
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:options_test",
