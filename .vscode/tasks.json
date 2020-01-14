@@ -15,7 +15,22 @@
         {
             "label": "debug-build",
             "type": "shell",
-            "command": "bazel build  -c dbg //:nighthawk_client nighthawk_test_server nighthawk_service nighthawk_output_transform",
+            "command": "bazel build  -c dbg //:nighthawk",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "debug-build-nighthawk-client",
+            "type": "shell",
+            "command": "bazel build  -c dbg //:nighthawk_client",
             "options": {
                 "cwd": "nighthawk"
             },
@@ -286,6 +301,21 @@
             "label": "bazel //test:python_test",
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=v4only -c dbg //test:python_test",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bazel //test:process_test",
+            "type": "shell",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all -c dbg //test:process_test",
             "options": {
                 "cwd": "nighthawk"
             },
