@@ -724,6 +724,62 @@
             "label": "setup third party includes",
             "type": "shell",
             "command": "./symlink-ide-headers.sh",
+        },
+        {
+            "label": "test-fastbuild",
+            "type": "shell",
+            "command": "bazel",
+            "options": {
+                "cwd": "nighthawk"
+            },
+            "args": [
+                "test",
+                "-c",
+                "fastbuild",
+                "--test_env=ENVOY_IP_TEST_VERSIONS=all",
+                "--cache_test_results=no",
+                "${input:testTarget}"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
+    ],
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "testTarget",
+            "description": "type",
+            "options": [
+                "//test:benchmark_http_client_test",
+                "//test:client_test",
+                "//test:client_worker_test",
+                "//test:factories_test",
+                "//test:frequency_test",
+                "//test:options_test",
+                "//test:output_formatter_test",
+                "//test:output_transform_main_test",
+                "//test:platform_util_test",
+                "//test:process_test",
+                "//test:python_test",
+                "//test:rate_limiter_test",
+                "//test:request_generator_test",
+                "//test:sequencer_test",
+                "//test:service_main_test",
+                "//test:service_test",
+                "//test:statistic_test",
+                "//test:stream_decoder_test",
+                "//test:termination_predicate_test",
+                "//test:utility_test",
+                "//test:worker_test",
+                "//test/server:http_test_server_filter_integration_test",
+                "//test/...",
+            ],
+            "default": "//test/..."
+        },
     ]
 }
