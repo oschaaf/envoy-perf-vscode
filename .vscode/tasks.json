@@ -776,6 +776,7 @@
                 "//test:termination_predicate_test",
                 "//test:utility_test",
                 "//test:worker_test",
+                "//test:sni_utility_test",
                 "//test/server:http_test_server_filter_integration_test",
                 "//test/...",
             ],
