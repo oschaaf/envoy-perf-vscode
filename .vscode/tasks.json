@@ -736,7 +736,7 @@
                 "test",
                 "-c",
                 "fastbuild",
-                "--test_env=ENVOY_IP_TEST_VERSIONS=all",
+                "--test_env=ENVOY_IP_TEST_VERSIONS=v4only",
                 "--cache_test_results=no",
                 "${input:testTarget}"
             ],
