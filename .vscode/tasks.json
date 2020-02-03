@@ -730,7 +730,7 @@
             "type": "shell",
             "command": "bazel",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "args": [
                 "test",
