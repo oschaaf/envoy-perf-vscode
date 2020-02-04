@@ -17,7 +17,7 @@
             "type": "shell",
             "command": "bazel build  -c dbg //:nighthawk",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -32,7 +32,7 @@
             "type": "shell",
             "command": "bazel build  -c dbg //:nighthawk_client",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -47,7 +47,7 @@
             "type": "shell",
             "command": "bazel build -c dbg --define zipkin_disabled=1 //:nighthawk_client nighthawk_test_server nighthawk_service",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -62,7 +62,7 @@
             "type": "shell",
             "command": "bazel build  -c opt //:nighthawk",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -77,7 +77,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh coverage'",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -92,7 +92,7 @@
             "type": "shell",
             "command": "ci/do_ci.sh docker && ../tools/push_nighthawk_docker.sh",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -107,7 +107,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh tsan'",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -122,7 +122,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh asan'",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -137,7 +137,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh clang_tidy'",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -152,7 +152,7 @@
             "type": "shell",
             "command": "ci/do_ci.sh asan",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -167,7 +167,7 @@
             "type": "shell",
             "command": "BAZEL_TEST_OPTIONS='' ci/do_ci.sh tsan",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -182,7 +182,7 @@
             "type": "shell",
             "command": "bazel build  -c opt //test:nighthawk_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -197,7 +197,7 @@
             "type": "shell",
             "command": "bazel build  -c dbg //test:*",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -212,7 +212,7 @@
             "type": "shell",
             "command": "bazel build  -c fastbuild //:nighthawk_client  nighthawk_test_server nighthawk_service",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -227,7 +227,7 @@
             "type": "shell",
             "command": "bazel build  -c fastbuild //test/...",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -242,7 +242,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test/...",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -257,7 +257,7 @@
             "type": "shell",
             "command": "bazel test --test_env=ENVOY_IP_TEST_VERSIONS=v4only --test_env=HEAPPROFILE= --test_env=HEAPCHECK= --cache_test_results=no --compilation_mode=opt --cxxopt=-g --cxxopt=-ggdb3 //benchmarks:*",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -272,7 +272,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=2500 --test_arg=--gtest_filter='IpVersions/ServiceTest.BackToBackExecution/IPv6' --jobs 50 -c dbg --local_resources 20000,50,0.25 //test:service_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -287,7 +287,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=1000 --test_arg=--gtest_filter='IpVersions/ServiceTest.*/*' --jobs 50 -c dbg --local_resources 20000,50,0.25 //test:service_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -302,7 +302,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=v4only -c dbg //test:python_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -317,7 +317,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all -c dbg //test:process_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -332,7 +332,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=10 -c dbg --local_resources 20000,50,0.25 //test:python_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -347,7 +347,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=1000 --test_arg=--gtest_filter='-IpVersions/ServiceTest.*/*' --jobs 50 -c dbg --local_resources 20000,50,0.25 //test:*",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -362,7 +362,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=1000 --jobs 50 -c dbg --local_resources 20000,20,0.25 //test:*",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -377,7 +377,7 @@
             "type": "shell",
             "command": "bazel test --test_env=ENVOY_IP_TEST_VERSIONS=all --cache_test_results=no  -c dbg //test/integration:integration_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -392,7 +392,7 @@
             "type": "shell",
             "command": "BAZEL_BUILD_OPTIONS=\"-c dbg\" tools/update_cli_readme_documentation.sh --mode fix",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -407,7 +407,7 @@
             "type": "shell",
             "command": "BAZEL_BUILD_OPTIONS=\"-c dbg\" tools/update_cli_readme_documentation.sh --mode check",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -422,7 +422,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test/server:http_test_server_filter_integration_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -437,7 +437,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=v4only --local_resources 16000,6,0.25 -c dbg //test/...",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -452,7 +452,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:statistic_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -467,7 +467,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:rate_limiter_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -482,7 +482,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:client_worker_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -497,7 +497,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:termination_predicate_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -512,7 +512,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:options_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -527,7 +527,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:utility_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -542,7 +542,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:output_formatter_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -557,7 +557,7 @@
             "type": "shell",
             "command": "bazel test --cache_test_results=no -c dbg //test:request_stream_grpc_client_test",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -572,7 +572,7 @@
             "type": "shell",
             "command": "bazel test --define zipkin_disabled=1 --cache_test_results=no -c dbg //test/...",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -587,7 +587,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh test'",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -602,7 +602,7 @@
             "type": "shell",
             "command": "../tools/run_docker.sh 'ci/do_ci.sh check_format'",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -631,7 +631,7 @@
                     "TEST_SRCDIR": "${workspaceRoot}/nighthawk",
                     "ENVOY_IP_TEST_VERSIONS": "all"
                 },
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "command": "bazel-bin/test/nighthawk_test",
             "group": {
@@ -672,7 +672,7 @@
             "dependsOn": "debug-build",
             "command": "nighthawk/tools/valgrind.sh",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -694,7 +694,7 @@
                     "TEST_SRCDIR": "${workspaceRoot}/nighthawk",
                     "ENVOY_IP_TEST_VERSIONS": ""
                 },
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
@@ -710,7 +710,7 @@
             "dependsOn": "debug-build-test",
             "command": "tools/valgrind-tests.sh",
             "options": {
-                "cwd": "nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk"
             },
             "problemMatcher": [
                 "$gcc"
