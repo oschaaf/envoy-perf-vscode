@@ -29,7 +29,8 @@
                     "${workspaceFolder}/nighthawk/source/"
                 ],
                 "limitSymbolsToIncludedHeaders": true
-            }
+            },
+            "compileCommands": "${workspaceFolder}/nighthawk/compile_commands.json"
         }
     ],
     "version": 4

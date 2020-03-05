@@ -18,7 +18,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "sourceFileMap": {
-                "/proc/self/cwd/external": "${workspaceFolder}/nighthawk/"
+                "/proc/self/cwd/external": "${workspaceFolder}/nighthawk/bazel-nighthawk/external/"
             },
             "setupCommands": [
                 {
@@ -33,7 +33,7 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "debug-build-test",
-            "program": "${workspaceRoot}/nighthawk/bazel-bin/test/service_test",
+            "program": "${workspaceRoot}/nighthawk/bazel-bin/test/benchmark_http_client_test",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/nighthawk/",
@@ -58,7 +58,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "sourceFileMap": {
-                "/proc/self/cwd/external/envoy": "${workspaceFolder}/nighthawk/envoy"
+                "/proc/self/cwd/external": "${workspaceFolder}/nighthawk/bazel-nighthawk/external/"
             },
             "setupCommands": [
                 {
@@ -98,7 +98,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "sourceFileMap": {
-                "/proc/self/cwd/external/envoy": "${workspaceFolder}/nighthawk/envoy"
+                "/proc/self/cwd/external": "${workspaceFolder}/nighthawk/bazel-nighthawk/external/"
             },
             "setupCommands": [
                 {
@@ -138,7 +138,7 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "sourceFileMap": {
-                "/proc/self/cwd/external/envoy": "${workspaceFolder}/nighthawk/envoy"
+                "/proc/self/cwd/external": "${workspaceFolder}/nighthawk/bazel-nighthawk/external/"
             },
             "setupCommands": [
                 {
