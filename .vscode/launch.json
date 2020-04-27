@@ -29,11 +29,11 @@
             ]
         },
         {
-            "name": "(gdb) Service Test",
+            "name": "(gdb) Client Test",
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "debug-build-test",
-            "program": "${workspaceRoot}/nighthawk/bazel-bin/test/benchmark_http_client_test",
+            "program": "${workspaceRoot}/nighthawk/bazel-bin/test/client_test",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/nighthawk/",

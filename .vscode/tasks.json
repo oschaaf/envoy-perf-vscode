@@ -283,9 +283,9 @@
             }
         },
         {
-            "label": "bazel //test:nighthawk_test repeat ServiceTest all 5000x",
+            "label": "bazel //test:nighthawk_test repeat ClientWorkerTest all 5000x",
             "type": "shell",
-            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=1000 --test_arg=--gtest_filter='IpVersions/ServiceTest.*/*' --jobs 50 -c dbg --local_resources 20000,50,0.25 //test:service_test",
+            "command": "bazel test --cache_test_results=no --test_env=ENVOY_IP_TEST_VERSIONS=all --runs_per_test=1000 --test_arg=--gtest_filter='IpVersions/ClientWorkerTest.*/*' --jobs 50 -c fastbuild --local_resources 20000,50,0.25 //test:client_worker_test",
             "options": {
                 "cwd": "${workspaceRoot}/nighthawk"
             },
