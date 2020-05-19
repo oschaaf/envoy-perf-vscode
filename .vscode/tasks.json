@@ -390,7 +390,7 @@
         {
             "label": "update_cli_readme_documentation",
             "type": "shell",
-            "command": "BAZEL_BUILD_OPTIONS=\"-c dbg\" tools/update_cli_readme_documentation.sh --mode fix",
+            "command": "BAZEL_BUILD_OPTIONS=\"-c fastbuild\" tools/update_cli_readme_documentation.sh --mode fix",
             "options": {
                 "cwd": "${workspaceRoot}/nighthawk"
             },
@@ -405,7 +405,7 @@
         {
             "label": "check_cli_readme_documentation",
             "type": "shell",
-            "command": "BAZEL_BUILD_OPTIONS=\"-c dbg\" tools/update_cli_readme_documentation.sh --mode check",
+            "command": "BAZEL_BUILD_OPTIONS=\"-c fastbuild\" tools/update_cli_readme_documentation.sh --mode check",
             "options": {
                 "cwd": "${workspaceRoot}/nighthawk"
             },
