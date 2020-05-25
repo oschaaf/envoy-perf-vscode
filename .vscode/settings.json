@@ -5,5 +5,8 @@
     "python.formatting.yapfArgs": [
         "--style",
         "nighthawk/tools/.style.yapf"
-    ]
+    ],
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
 }

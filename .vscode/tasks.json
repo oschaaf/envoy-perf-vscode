@@ -255,7 +255,7 @@
         {
             "label": "build benchmarks",
             "type": "shell",
-            "command": "bazel build -c opt //benchmarks:*",
+            "command": "bazel build -c opt \"//benchmarks:*\"",
             "options": {
                 "cwd": "${workspaceRoot}/nighthawk"
             },
@@ -277,6 +277,18 @@
             "problemMatcher": [
                 "$gcc"
             ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "benchmark standalone test",
+            "type": "shell",
+            "command": "benchmarks/test.sh",
+            "options": {
+                "cwd": "${workspaceRoot}/nighthawk"
+            },
             "group": {
                 "kind": "test",
                 "isDefault": true
