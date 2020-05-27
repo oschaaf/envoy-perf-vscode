@@ -93,15 +93,15 @@
 		"editor.formatOnSave": true,
 		"doxdocgen.generic.authorEmail": "oschaaf@we-amp.com",
 		"doxdocgen.generic.authorName": "Otto van der Schaaf",
-		"terminal.integrated.shell.linux": "/bin/bash",
-		"terminal.integrated.shellArgs.linux": [
-			"-l"
-		],
-		"terminal.integrated.env.linux": {
-			"CC": "/usr/lib/llvm-9/bin/clang",
-			"CXX": "/usr/lib/llvm-9/bin/clang++"
-		},
-		"clang-format.executable": "/usr/lib/llvm-9/bin/clang-format",
+		//"terminal.integrated.shell.linux": "/bin/bash",
+		//"terminal.integrated.shellArgs.linux": [
+		//	"-l"
+		//],
+		//"terminal.integrated.env.linux": {
+		//	"CC": "/usr/lib/llvm-9/bin/clang",
+		//	"CXX": "/usr/lib/llvm-9/bin/clang++"
+		//},
+		"clang-format.executable": "clang-format",
 		"typescript.tsc.autoDetect": "off",
 		"gulp.autoDetect": "off",
 		"jake.autoDetect": "off",
