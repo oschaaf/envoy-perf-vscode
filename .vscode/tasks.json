@@ -285,7 +285,7 @@
         {
             "label": "benchmark standalone test",
             "type": "shell",
-            "command": "benchmarks/test.sh",
+            "command": "benchmarks/run_benchmark.sh",
             "options": {
                 "cwd": "${workspaceRoot}/nighthawk"
             },
