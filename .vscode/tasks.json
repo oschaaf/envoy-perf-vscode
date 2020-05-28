@@ -268,22 +268,23 @@
             }
         },
         {
-            "label": "bazel profiling //benchmarks:*",
+            "label": "benchmark execution with binaries from this repo",
             "type": "shell",
-            "command": "bazel test --test_env=ENVOY_IP_TEST_VERSIONS=v4only --test_env=ENVOY_DOCKER_IMAGE_TO_TEST='envoyproxy/envoy-dev:f61b096f6a2dd3a9c74b9a9369a6ea398dbe1f0f' --test_env=HEAPPROFILE= --test_env=HEAPCHECK= --cache_test_results=no --compilation_mode=opt --cxxopt=-g --cxxopt=-ggdb3 //benchmarks:*",
+            "command": "bazel test --test_summary=detailed --test_output=all --test_arg=--log-cli-level=info --test_env=ENVOY_IP_TEST_VERSIONS=v4only --test_env=HEAPPROFILE= --test_env=HEAPCHECK= --cache_test_results=no --compilation_mode=opt --cxxopt=-g --cxxopt=-ggdb3 //benchmarks:*",
             "options": {
-                "cwd": "${workspaceRoot}/nighthawk"
+                "cwd": "${workspaceRoot}/nighthawk",
+                "env": {
+                    "TMPDIR": "${workspaceRoot}/nighthawk/benchmarks/tmp",
+                    "ENVOY_IP_TEST_VERSIONS": "v4only"
+                },
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
             "group": {
                 "kind": "test",
                 "isDefault": true
             }
         },
         {
-            "label": "benchmark standalone test",
+            "label": "benchmark execution with NH & Envoy docker images",
             "type": "shell",
             "command": "benchmarks/run_benchmark.sh",
             "options": {
