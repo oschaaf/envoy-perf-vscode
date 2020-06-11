@@ -681,9 +681,8 @@
         "--cache_test_results=no",
         "${input:testTarget}"
       ],
-      "problemMatcher": ["$gcc"],
       "group": {
-        "kind": "build",
+        "kind": "test",
         "isDefault": true
       }
     }
