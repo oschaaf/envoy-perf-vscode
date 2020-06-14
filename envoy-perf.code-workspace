@@ -105,6 +105,10 @@
 		"typescript.tsc.autoDetect": "off",
 		"gulp.autoDetect": "off",
 		"jake.autoDetect": "off",
-		"grunt.autoDetect": "off"
+		"grunt.autoDetect": "off",
+		"python.linting.flake8Args": [
+			"--indent-size=2"
+		],
+		"python.linting.flake8Enabled": true
 	}
 }
