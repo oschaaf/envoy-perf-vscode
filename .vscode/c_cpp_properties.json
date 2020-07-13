@@ -1,37 +1,31 @@
 {
-    "configurations": [
-        {
-            "name": "Linux",
-            "includePath": [
-                "/usr/include",
-                "/usr/local/include",
-                "${workspaceFolder}/nighthawk/bazel-nighthawk/external/**",
-                "${workspaceFolder}/nighthawk/bazel-genfiles/external/envoy_api/",
-                "${workspaceFolder}/nighthawk/bazel-genfiles/",
-                "${workspaceFolder}/nighthawk/bazel-genfiles/external/**",
-                "${workspaceFolder}/nighthawk/include/",
-                "${workspaceFolder}/nighthawk/source/"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/lib/llvm-9/bin/clang++",
-            "cStandard": "c11",
-            "cppStandard": "c++14",
-            "intelliSenseMode": "gcc-x64",
-            "browse": {
-                "path": [
-                    "/usr/include",
-                    "/usr/local/include",
-                    "${workspaceFolder}/nighthawk/bazel-nighthawk/external/**",
-                    "${workspaceFolder}/nighthawk/bazel-genfiles/external/envoy_api/",
-                    "${workspaceFolder}/nighthawk/bazel-genfiles/",
-                    "${workspaceFolder}/nighthawk/bazel-genfiles/external/**",
-                    "${workspaceFolder}/nighthawk/include/",
-                    "${workspaceFolder}/nighthawk/source/"
-                ],
-                "limitSymbolsToIncludedHeaders": true
-            },
-            "compileCommands": "${workspaceFolder}/nighthawk/compile_commands.json"
-        }
-    ],
-    "version": 4
+  "configurations": [
+    {
+      "name": "Linux",
+      "includePath": [
+        "/usr/include",
+        "/usr/local/include",
+        "${workspaceFolder}/nighthawk/include/",
+        "${workspaceFolder}/nighthawk/source/",
+        "${workspaceFolder}/nighthawk/bazel-nighthawk/external/**"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/lib/llvm-10/bin/clang++",
+      "cStandard": "c11",
+      "cppStandard": "c++14",
+      "intelliSenseMode": "gcc-x64",
+      "browse": {
+        "path": [
+          "/usr/include",
+          "/usr/local/include",
+          "${workspaceFolder}/nighthawk/include/",
+          "${workspaceFolder}/nighthawk/source/",
+          "${workspaceFolder}/nighthawk/bazel-nighthawk/external/**"
+        ],
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "compileCommands": "${workspaceFolder}/nighthawk/compile_commands.json"
+    }
+  ],
+  "version": 4
 }

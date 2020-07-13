@@ -4,15 +4,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "start-build-cache",
-      "type": "shell",
-      "command": "go run github.com/buchgr/bazel-remote --dir ${HOME}/bazel_cache --host 127.0.0.1 --port 28080 --max_size 150 &",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
       "label": "debug-build",
       "type": "shell",
       "command": "bazel build  -c dbg //:nighthawk",
@@ -170,7 +161,7 @@
     {
       "label": "debug-build-test",
       "type": "shell",
-      "command": "bazel build  -c dbg //test:*",
+      "command": "bazel build  -c dbg //test/...",
       "options": {
         "cwd": "${workspaceRoot}/nighthawk"
       },
@@ -181,9 +172,22 @@
       }
     },
     {
-      "label": "build",
+      "label": "build all",
       "type": "shell",
-      "command": "bazel build  -c fastbuild //:nighthawk_client  nighthawk_test_server nighthawk_service",
+      "command": "bazel build  -c fastbuild //:nighthawk_client nighthawk_test_server nighthawk_service nighthawk_output_transform",
+      "options": {
+        "cwd": "${workspaceRoot}/nighthawk"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "build nighthawk_client",
+      "type": "shell",
+      "command": "bazel build -c fastbuild //:nighthawk_client",
       "options": {
         "cwd": "${workspaceRoot}/nighthawk"
       },
@@ -560,6 +564,19 @@
       }
     },
     {
+      "label": "fix-format-direct",
+      "type": "shell",
+      "command": "ci/do_ci.sh fix_format",
+      "options": {
+        "cwd": "${workspaceRoot}/nighthawk"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
       "label": "direct-run-test",
       "type": "shell",
       "dependsOn": "debug-build-test",
@@ -614,59 +631,6 @@
       }
     },
     {
-      "label": "simple-valgrind-run-direct",
-      "type": "shell",
-      "dependsOn": "debug-build",
-      "command": "nighthawk/tools/valgrind.sh",
-      "options": {
-        "cwd": "${workspaceRoot}/nighthawk"
-      },
-      "problemMatcher": ["$gcc"],
-      "group": {
-        "kind": "test",
-        "isDefault": true
-      }
-    },
-    {
-      "label": "callgrind-test-coverage",
-      "type": "shell",
-      "dependsOn": "debug-build-test",
-      "command": "valgrind --tool=callgrind --collect-jumps=yes bazel-bin/nighthawk/test/nighthawk_test",
-      "options": {
-        "env": {
-          "TEST_WORKSPACE": ".",
-          "TEST_TMPDIR": "/tmp/foo",
-          "TEST_SRCDIR": "${workspaceRoot}/nighthawk",
-          "ENVOY_IP_TEST_VERSIONS": ""
-        },
-        "cwd": "${workspaceRoot}/nighthawk"
-      },
-      "problemMatcher": ["$gcc"],
-      "group": {
-        "kind": "test",
-        "isDefault": true
-      }
-    },
-    {
-      "label": "valgrind-run-test-direct",
-      "type": "shell",
-      "dependsOn": "debug-build-test",
-      "command": "tools/valgrind-tests.sh",
-      "options": {
-        "cwd": "${workspaceRoot}/nighthawk"
-      },
-      "problemMatcher": ["$gcc"],
-      "group": {
-        "kind": "test",
-        "isDefault": true
-      }
-    },
-    {
-      "label": "setup third party includes",
-      "type": "shell",
-      "command": "./symlink-ide-headers.sh"
-    },
-    {
       "label": "test-fastbuild",
       "type": "shell",
       "command": "bazel",
@@ -716,6 +680,7 @@
         "//test:worker_test",
         "//test:sni_utility_test",
         "//test/server:http_test_server_filter_integration_test",
+        "//test/server:http_dynamic_delay_filter_integration_test",
         "//test/..."
       ],
       "default": "//test/..."
